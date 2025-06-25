@@ -1,0 +1,162 @@
+
+# 🔍 JavaScript Code Reviewer
+
+A full-stack web application that reviews JavaScript code in real time using AI.  
+Users can paste JavaScript code and receive:
+
+- 🧠 A clear explanation of what the code does  
+- ⚠️ Identified issues and potential bugs  
+- 🛠️ A fixed/improved version of the code  
+- 💡 Suggestions for better practices and modern syntax
+
+> Powered by **Google Gemini** on the backend and built with **React + Vite** on the frontend.
+
+---
+
+## ✨ Features
+
+- ✅ Real-time JS code analysis and feedback
+- ✍️ Natural-language explanations for any code snippet
+- 🧼 Auto-suggestions for style, readability, and best practices
+- 🧾 Clean diff between original and improved code
+- 📋 Copyable, ready-to-use fixed code blocks
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer       | Tools Used                                                                 |
+|-------------|----------------------------------------------------------------------------|
+| **Frontend**| React 19, Vite 6, Axios, Prism.js, highlight.js, react-simple-code-editor |
+| **Backend** | Node.js, Express, @google/generative-ai, dotenv, cors                     |
+| **Language**| JavaScript (ES2022+)                                                      |
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+└── frontend/
+    ├── src/
+    │   ├── App.jsx
+    │   ├── components/
+    │   └── ...
+    ├── index.html
+    └── package.json
+```
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Prerequisites
+- Node.js v18+
+- A [Google Generative AI (Gemini)](https://ai.google.dev/) API key
+
+---
+
+### 🖥️ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file with your Gemini key:
+
+```
+GEMINI_API_KEY=your-api-key-here
+```
+
+Start the backend server:
+
+```bash
+node server.js
+```
+
+The backend runs at: `http://localhost:3000`
+
+---
+
+### 🌐 Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend runs at: `http://localhost:5173`
+
+---
+
+## 📡 API Endpoint
+
+### `POST /review`
+
+**Request Body:**
+```json
+{
+  "code": "function sum(a, b) { return a + b; }"
+}
+```
+
+**Response:**
+```json
+{
+  "summary": "This function adds two numbers.",
+  "issues": ["Missing input validation", "No JSDoc comment"],
+  "fixedCode": "/* improved version here */",
+  "improvements": ["Added input type check", "Added documentation"]
+}
+```
+
+---
+
+## 🧪 Test Ideas
+
+| Test | What to Check |
+|------|----------------|
+| ✅ Valid JS code | Returns summary, issues, and fix |
+| ❌ Invalid code | Returns explanation or error |
+| ⛔ Empty input | Returns friendly validation message |
+| 🔁 Loops, async, arrow functions | Detect modern syntax opportunities |
+| ⚠️ Dangerous patterns (e.g., eval) | Security alerts suggested |
+
+---
+
+## 🤝 Contributing
+
+1. Fork the project  
+2. Create a new branch (`git checkout -b feature/your-feature`)  
+3. Commit your changes  
+4. Push to your branch (`git push origin feature/your-feature`)  
+5. Open a pull request 🚀
+
+---
+
+## 📜 License
+
+This project is licensed under the **ISC License**.
+
+---
+
+## 🙏 Acknowledgements
+
+- [Google Generative AI (Gemini)](https://ai.google.dev/)
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [highlight.js](https://highlightjs.org/)
+- [Prism.js](https://prismjs.com/)
+- [OpenAI](https://openai.com/) for the inspiration ❤️
+
+---
+
+## ⭐ Show Your Support
+
+If you find this project useful, give it a ⭐ on GitHub and share it with others!
